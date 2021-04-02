@@ -1,13 +1,29 @@
 new Vue({
   el: ".ba",
-  data: { name: "bh" ,
-    website:"https://vuejs.org/v2/guide/instance.html#Data-and-Methods",
-    website_tag:'<a href="https://www.google.com/">google</a>',
-    
-},
+  data: {
+    number: 0,
+    name: "",
+    age: 0,
+    red: true,
+    green: false,
+    chars:["charan","kiran","ramuji"],
+    nodes:[{name:'char',age:'10'},{name:'kir',age:'10'}]
+  },
   methods: {
     greet: function (times) {
-      return "good " + times + " " + this.name;
+      return "good " + times + " ";
     },
+    ager: function () {
+      this.age = document.getElementById("ages").value;
+    },
+    add: function (num) {
+      this.number += num;
+    },
+    red_toggle:function(){
+      this.red=!this.red;
+    },
+    green_toggle:function(){
+      this.green=!this.green;
+    }
   },
 });

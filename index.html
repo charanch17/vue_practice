@@ -8,12 +8,36 @@
   <body>
     <div class="ba">
       <h1>{{greet('afternoon')}}</h1>
+      <button v-on:click="add(1)" style="margin-right: 30px;">click the button to add</button>
+      <button v-on:dblclick="add(10)">double click the button to add 10</button>
+      <p>{{number}}</p>
       <div>
-          <p v-html="website_tag"></p>
-          <a :href=website>click</a>
+        <label>age :</label>
+        <input type="number" v-on:keydown.enter="ager" id="ages">
+        <p>
+          {{age}}
+        </p>
       </div>
-      <p>hehe {{name}}</p>
+      <div>
+        <label>name :</label>
+        <input type="text" v-model="name">
+        <p>
+          {{name}}
+        </p>
+      </div>
+      <button v-on:click="red_toggle">red toggler</button>
+      <button v-on:click="green_toggle">green toggler</button>
+      <div v-bind:class='{red:red,green:green}'>
+        <p v-if="red">hello</p>
+      </div>
+     <ul>
+       <li v-for="(i,index) in chars">{{index}}.{{i}}</li>
+     </ul>
+     <ul>
+      <li v-for="(i,index) in nodes">{{index}}.{{i.name}}</li>
+    </ul>
     </div>
+    
     <script src="app.js"></script>
   </body>
 </html>
